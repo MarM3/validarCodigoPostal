@@ -5,21 +5,19 @@ $(document).ready(function () {
         let cp = $("#codigopostal").val();
 
         if (patron.test(cp)) {
-            if (cp.length === 5) { //"El código postal introducido es correcto.";
-                $("#mostrar").html("El código postal introducido es correcto.");
-                borrar();
-            }
+            //if (cp.length === 5) { //"El código postal introducido es correcto.";
+                $("#mostrar").html("El código postal introducido es correcto."); //primero aparece el mensaje
+                borrar();//luego lo borro
+           // }
         } else {
-            if (cp !== "") {
                 //"El codigo postal no es correcto. Debe ser de 5 caracteres."
                 $("#mostrar").html("El código postal no es correcto. Debe introducir 5 caracteres numéricos.");
                 borrar();
-            }
         }
     });
 });
 
-function borrar() {
+function borrar() { //cuando pasan 3 minutos aparece este mensaje
     setTimeout(function () {
         $("#mostrar").html("");
     }, 3000);
